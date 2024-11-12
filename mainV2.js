@@ -1,43 +1,3 @@
-// Function to validate the license key
-async function validateLicenseKey(licenseKey, userId) {
-    try {
-      
-      const response = await fetch('https://license-validation.onrender.com/validate-license', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          licenseKey: licenseKey,
-          userId: userId
-        }),
-      });
-  
-      const data = await response.json();
-  
-      if (data.valid) {
-        console.log('License is valid');
-        initializeTheme(); // Call this function if the license is validated
-      } else {
-        console.error('Invalid or expired license key:', data.message);
-        lockCustomizationScreen(); // Lock if invalid license
-      }
-    } catch (error) {
-      console.error('Error validating license:', error);
-      lockCustomizationScreen();
-    }
-  }
-  
-  
-
-// Function to initialize the theme only after license validation
-function initializeTheme() {
-  console.log('Initializing theme with valid license...');
-  enableThemeFeatures(); // Your theme's main features will run here
-}
-
-// Place your existing main.js functionality here
-function enableThemeFeatures() {
 const a0_0x262bb0 = a0_0x103f;
 (function(_0x245a1c, _0x15a622) {
     const _0xeded05 = a0_0x103f
@@ -2502,7 +2462,6 @@ function metafieldPoly() {
     }
     return !![];
 }
-
 function updateVariantStatuses(_0x397aa7, _0x1382fd) {
     const _0x24a78e = a0_0x262bb0;
     _0x1382fd[_0x24a78e(0x2b1)]( (_0x149843, _0x5243f1) => {
@@ -3387,22 +3346,3 @@ class CardVariantSelects extends VariantSelects {
     }
 }
 customElements[a0_0x262bb0(0x40f)](a0_0x262bb0(0x41b), CardVariantSelects);
-}
-
-// Function to lock the theme customization screen
-function lockCustomizationScreen() {
-  console.error('Theme customization is locked. Invalid or expired license.');
-  document.body.innerHTML = '<h1>Your license is invalid or expired. Please enter a valid license key to continue.</h1>';
-}
-
-// Retrieve the license key from the `data-animations-type` attribute in the `script` tag
-const scriptTag = document.querySelector('script[src="https://mainkeys.onrender.com/main.js"]');
-const licenseKey = scriptTag ? scriptTag.getAttribute('data-animations-type') : null;
-const userId = scriptTag ? scriptTag.getAttribute('data-user-id') : null;  // Use an actual unique identifier
-
-// Only proceed with theme initialization if a license key exists
-if (licenseKey && licenseKey.trim() !== '') {
-  validateLicenseKey(licenseKey, userId); // Validate the license key before initializing the theme
-} else {
-  lockCustomizationScreen(); // Lock if no license key is found
-}
