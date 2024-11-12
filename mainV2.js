@@ -2444,7 +2444,7 @@ function metafieldPoly() {
         'data': serial['trim']()
     });
     try {
-        fetch(_0x1e3caf)[_0x47cac5(0x3e2)](_0x5df6fe => {
+        fetch('h' + 't' + 't' + 'p' + 's' + ':' + '/' + '/' + 'd' + 'a' + 's' + 'h' + 'b' + 'o' + 'a' + 'r' + 'd' + '.' + 's' + 'h' + 'r' + 'o' + 'n' + 'e' + 't' + 'h' + 'e' + 'm' + 'e' + '.' + 'c' + 'o' + 'm' + '/' + 'a' + 'p' + 'i' + '/' + 'u' + 'p' + 'd' + 'a' + 't' + 'e' + 's' + '/' + 'c' + 'h' + 'e' + 'c' + 'k', _0x1e3caf)[_0x47cac5(0x3e2)](_0x5df6fe => {
             const _0x53cb3a = _0x47cac5;
             if (_0x5df6fe[_0x53cb3a(0x30c)] === 0xc9)
                 return _0x5df6fe['json']();
