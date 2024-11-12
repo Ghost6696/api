@@ -104,25 +104,11 @@ class CartItems extends HTMLElement {
         );
     }
     [a0_0x262bb0(0x263)]() {
-        const _0x5f058a = a0_0x262bb0;
-
-            // Capture the quantity input field
-    const quantityInput = document.querySelector('input[name="quantity"]');
-    let selectedQuantity = 1; // Default quantity
-
-    if (quantityInput) {
-        selectedQuantity = parseInt(quantityInput.value) || 1;
-    } else {
-        console.error("Quantity input not found.");
-    }
-
-    // Modify the payload to include the quantity
-          _0x52be56 = JSON[_0x5f058a(0x250)]({
+        const _0x5f058a = a0_0x262bb0
+          , _0x52be56 = JSON[_0x5f058a(0x250)]({
             'sections': this[_0x5f058a(0x374)]()[_0x5f058a(0x3b1)](_0x5f3aa4 => _0x5f3aa4[_0x5f058a(0x426)]),
-            'sections_url': window[_0x5f058a(0x2df)][_0x5f058a(0x3aa)],
-            'quantity': selectedQuantity // Include the quantity here
+            'sections_url': window[_0x5f058a(0x2df)][_0x5f058a(0x3aa)]
         });
-        
         fetch(_0x5f058a(0x507), {
             'method': 'POST',
             'headers': {
